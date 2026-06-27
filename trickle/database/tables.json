@@ -1,0 +1,31 @@
+[
+  {
+    "name": "lvmx_app_data",
+    "fields": [
+      {
+        "name": "state_id",
+        "type": "text",
+        "description": "Identificador unico del estado global",
+        "options": null
+      },
+      {
+        "name": "teams_data",
+        "type": "text",
+        "description": "Datos de los equipos en formato JSON",
+        "options": null
+      },
+      {
+        "name": "matches_data",
+        "type": "text",
+        "description": "Datos de los partidos en formato JSON",
+        "options": null
+      },
+      {
+        "name": "settings_data",
+        "type": "text",
+        "description": "Ajustes generales en formato JSON",
+        "options": null
+      }
+    ]
+  }
+]

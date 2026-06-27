@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ligas Virtuales MX</title>
+    <meta name="description" content="Simulación y gestión de ligas de fútbol virtual.">
+    
+    <!-- React & Babel -->
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <style type="text/tailwindcss">
+    @layer theme {
+        :root {
+            --primary-color: #1E3A8A;
+            --accent-color: #D4AF37;
+            --bg-dark: #0f172a;
+        }
+        .font-display {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .font-body {
+            font-family: 'Inter', sans-serif;
+        }
+    }
+
+    @layer base {
+        body {
+            @apply font-body bg-slate-100 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-200;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            @apply font-display;
+        }
+    }
+
+    @layer components {
+        .btn {
+            @apply px-4 py-2 rounded-md font-medium transition-colors duration-200 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed;
+        }
+        .btn-primary {
+            @apply bg-blue-900 text-white hover:bg-blue-800 dark:bg-blue-800 dark:hover:bg-blue-700;
+        }
+        .btn-accent {
+            @apply bg-[#D4AF37] text-black hover:bg-[#b8962e];
+        }
+        .btn-outline {
+            @apply border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800;
+        }
+        .btn-ghost {
+            @apply hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400;
+        }
+        .card {
+            @apply bg-white dark:bg-slate-900 rounded-lg shadow-sm border border-slate-200 dark:border-slate-800 p-4;
+        }
+        .input-field {
+            @apply w-full px-3 py-2 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600;
+        }
+        .nav-item {
+            @apply px-4 py-3 text-sm font-medium border-b-2 border-transparent hover:text-blue-600 dark:hover:text-blue-400 transition-colors;
+        }
+        .nav-item.active {
+            @apply border-blue-600 text-blue-600 dark:text-blue-400;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <!-- Libs -->
+    <script type="text/babel" src="lib/teams.js"></script>
+    <script type="text/babel" src="lib/utils.js"></script>
+    <script type="text/babel" src="lib/simulation.js"></script>
+    
+    <!-- UI Components -->
+    <script type="text/babel" src="components/ui/Button.js"></script>
+    <script type="text/babel" src="components/ui/Modal.js"></script>
+    <script type="text/babel" src="components/ui/ImageViewer.js"></script>
+    <script type="text/babel" src="components/ui/ZoomableImage.js"></script>
+    
+    <!-- Feature Components -->
+    <script type="text/babel" src="components/LeagueTable.js"></script>
+    <script type="text/babel" src="components/TeamEditor.js"></script>
+    <script type="text/babel" src="components/AdminPanel.js"></script>
+    
+    <!-- New Section Views -->
+    <script type="text/babel" src="components/views/FixturesView.js"></script>
+    <script type="text/babel" src="components/views/LiveResultsView.js"></script>
+    <script type="text/babel" src="components/views/MatchDetailView.js"></script>
+    <script type="text/babel" src="components/views/TeamsView.js"></script>
+    <script type="text/babel" src="components/views/TeamDetailView.js"></script>
+    <script type="text/babel" src="components/views/PlayoffsView.js"></script>
+    
+    <script type="text/babel" src="app.js"></script>
+</body>
+</html>
